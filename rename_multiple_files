@@ -1,14 +1,10 @@
 #!/bin/bash
 
 #########################################################################
-# Rename multiple files at once...
-# First of all, make sure the files are inside a exclusive directory
-# along with the present file "rename_multiple_files.sh"
-#########################################################################
 # Choose the $RENAME_OPTION:
 # To rename files by enumerating them, there are two options:
 # (1) Keep the same enumeration of the old files; or
-# (2) Renumber files keeping order and starting at $NUM.
+# (2) Renumber files in ascending order starting at $NUM.
 # To make a simple filename change: (3) or anything else.
 
 RENAME_OPTION=3
@@ -27,9 +23,9 @@ NUM=1
 NUM_INCREMENT=1
 
 # Set the part of the name you want to remove and the part you want
-# to replace, if $RENAME_OPTION=3
+# to include, if $RENAME_OPTION=3
 RMV_NAME="old"
-RPLC_NAME="new"
+INCL_NAME="new"
 
 
 #########################################################################
@@ -58,7 +54,7 @@ do
     else
 
         # Simple file renaming
-        NEW_FILENAME="${FILENAME/"$RMV_NAME"/"$RPLC_NAME"}"
+        NEW_FILENAME="${FILENAME/"$RMV_NAME"/"$INCL_NAME"}"
 
     fi
 
