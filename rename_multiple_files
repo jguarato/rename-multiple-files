@@ -1,0 +1,69 @@
+#!/bin/bash
+
+#########################################################################
+# Rename multiple files at once...
+# First of all, make sure the files are inside a exclusive directory
+# along with the present file "rename_multiple_files.sh"
+#########################################################################
+# Choose the $RENAME_OPTION:
+# To rename files by enumerating them, there are two options:
+# (1) Keep the same enumeration of the old files; or
+# (2) Renumber files keeping order and starting at $NUM.
+# To make a simple filename change: (3) or anything else.
+
+RENAME_OPTION=3
+
+#########################################################################
+# Set the file extension
+FILE_EXTENSION=".dat"
+
+# Set the new complete name, including the number format for enumeration
+# and the file extension, if $RENAME_OPTION=1 or $RENAME_OPTION=2
+NEW_COMPLETE_NAME="my_new_filename_%04d.dat"
+
+# Set the starting number and the increment of the file enumeration,
+# if $RENAME_OPTION=2
+NUM=1
+NUM_INCREMENT=1
+
+# Set the part of the name you want to remove and the part you want
+# to replace, if $RENAME_OPTION=3
+RMV_NAME="old"
+RPLC_NAME="new"
+
+
+#########################################################################
+
+
+for FILENAME in *${FILE_EXTENSION}
+do
+    NEW_FILENAME=FILENAME
+
+    if [ $RENAME_OPTION = "1" ]
+    then
+
+        # Keep the same enumeration of the old files
+        NUM="${FILENAME//[!0-9]}"  
+        NUM=`echo $NUM | sed 's/^0*//'`
+        
+        NEW_FILENAME="$(printf "$NEW_COMPLETE_NAME" "$NUM")"
+
+    elif [ $RENAME_OPTION = "2" ]
+    then
+        
+        # Renumber files keeping order and starting at $NUM
+        NEW_FILENAME="$(printf "$NEW_COMPLETE_NAME" "$NUM")"
+        let NUM=NUM+NUM_INCREMENT
+
+    else
+
+        # Simple file renaming
+        NEW_FILENAME="${FILENAME/"$RMV_NAME"/"$RPLC_NAME"}"
+
+    fi
+
+    # Finally, renaming files
+    echo $FILENAME "==>" $NEW_FILENAME
+    mv "$FILENAME" "$NEW_FILENAME"
+
+done
