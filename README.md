@@ -4,7 +4,7 @@ This shell script was created to rename several files at once that have the same
 
 <hr>
 
-### Here are some tips on how to use it:
+### 💡 Here are some tips on how to use it
 
   <br>
 
@@ -50,3 +50,28 @@ This shell script was created to rename several files at once that have the same
     
   ☑️ After all, you can run the script.
   
+  
+<hr>
+
+### 💻 Examples
+
+<div align=center>
+
+### Original files 
+![1](https://user-images.githubusercontent.com/82293939/164112146-b69181a1-d768-4660-a5e4-12f368b6feec.png)
+
+### Renaming files with RENAME_OPTION=1 
+![RENAME_OPTION=1_1](https://user-images.githubusercontent.com/82293939/164113761-691df547-a9ba-4899-a097-85cde83fab96.png)
+![RENAME_OPTION=1_2](https://user-images.githubusercontent.com/82293939/164112047-cfbc7c81-5eb6-436a-9baf-79f326d2f8f2.png)
+
+### Renaming files with RENAME_OPTION=2
+![RENAME_OPTION=2_1](https://user-images.githubusercontent.com/82293939/164113763-a97d8ab4-c701-45d3-801a-8d7bd8e6b975.png)
+![RENAME_OPTION=2_2](https://user-images.githubusercontent.com/82293939/164112051-6d5ca5af-63f7-43e3-a9f8-bf9df42b6210.png)
+
+### Renaming files with RENAME_OPTION=3
+![RENAME_OPTION=3_1](https://user-images.githubusercontent.com/82293939/164113765-0322c764-f61c-4d1e-9542-7cf9d16d67f5.png)
+![RENAME_OPTION=3_2](https://user-images.githubusercontent.com/82293939/164112058-6f849ba9-06de-4826-9551-c8c2646e2673.png)
+
+</div>
+
+
